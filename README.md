@@ -16,7 +16,7 @@ Ya no es necesario descargar el código fuente, descomprimir archivos ni ejecuta
 
 Accede a la sección **Releases** del repositorio:
 
-https://github.com/GustavoUA/local-ia/releases
+https://github.com/GustavoUA/local-ia
 
 Descarga:
 
