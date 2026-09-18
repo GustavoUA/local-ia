@@ -1,41 +1,213 @@
-# TU\_IA\_LOCAL
+# Local AI — SecTF Labs
 
-*Creado por **SecTF Lab***
+**Local AI** es un asistente de inteligencia artificial diseñado para ejecutarse localmente en Windows utilizando **Ollama** como motor de modelos LLM.
 
-Interfaz web para instalar y hablar con un modelo de IA (LLM) que corre en tu propio equipo,
-usando [Ollama](https://ollama.com) como motor.
+El objetivo del proyecto es simplificar al máximo el uso de inteligencia artificial local: instalar la aplicación, seleccionar un modelo y comenzar a utilizarla desde una interfaz web sencilla.
 
-## Cómo funciona
+Desarrollado por **SecTF Labs**.
 
-Un navegador no puede ejecutar PowerShell ni instalar programas por sí solo. Por eso este
-proyecto tiene dos partes:
+---
 
-* **`server.js`**: un pequeño servidor Node que corre en tu PC. Es el único que ejecuta
-comandos (PowerShell/`ollama`) y habla con la API local de Ollama (`http://localhost:11434`).
-* **`public/`**: la web (HTML/CSS/JS) que ves en el navegador. Le pide cosas al servidor
-mediante peticiones fetch, nunca ejecuta comandos directamente.
+## Instalación
 
-## Requisitos
+Ya no es necesario descargar el código fuente, descomprimir archivos ni ejecutar manualmente diferentes scripts.
 
-* Windows 10/11 con `winget` (viene de serie en Windows moderno).
-* No hace falta tener Node.js ni Ollama instalados de antemano: el asistente los comprueba
-y los instala él solo si faltan.
+### 1. Descargar Local AI
 
-## Para usuarios finales (sin conocimientos técnicos): "Asistente de IA"
+Accede a la sección **Releases** del repositorio:
 
-1. Descomprimimos el .Zip que hemos descargado.
-2. accedemos a la ruta Asistente IA
-3. ejecutamos el .exe que se encuentra en el interior "Asistente IA.exe" 
+https://github.com/GustavoUA/local-ia/releases
 
+Descarga:
 
+`Local-AI-Setup-1.0.0.exe`
 
-El asistente instalará NODE.JS y ollama, una vez instalado aparecerá una ventana web
+### 2. Ejecutar el instalador
 
-esta ventana es local no lo ve nadie mas que el usuario que lo usa, el siguiente paso es
+Haz doble clic sobre:
 
-"iniciar Servicio de Ollama", posterior a ello se le habilitará una lista de asistente IA
+`Local-AI-Setup-1.0.0.exe`
 
-debe elegir el mas adecuado para usted, denle a "descargar" y espere unos minutos
+El asistente instalará Local AI y creará automáticamente los accesos directos necesarios.
+
+### 3. Ejecutar Local AI
+
+Una vez terminada la instalación, ejecuta:
+
+**Local AI**
+
+desde el escritorio o desde el menú Inicio de Windows.
+
+---
+
+## ¿Qué diferencia hay entre Ollama y Local AI?
+
+Ollama proporciona el motor necesario para ejecutar modelos de inteligencia artificial localmente.
+
+**Local AI utiliza Ollama como motor, pero añade una capa orientada a simplificar su utilización.**
+
+En lugar de trabajar directamente con comandos y configuraciones, Local AI proporciona una interfaz desde la que gestionar y utilizar los modelos.
+
+```text
+Usuario
+   │
+   ▼
+Local AI
+   │
+   ├── Interfaz Web
+   │
+   ├── Backend Node.js
+   │
+   └── Gestión del asistente
+          │
+          ▼
+       Ollama
+          │
+          ▼
+       Modelo LLM
+```
+
+---
+
+## ✨ Características
+
+- 🧠 Inteligencia artificial ejecutada localmente.
+- 🔒 Las conversaciones se procesan en el propio equipo.
+- 🌐 Interfaz web sencilla.
+- 🤖 Compatible con modelos disponibles mediante Ollama.
+- 📦 Instalador para Windows.
+- 🖥️ Acceso directo desde Windows.
+- ⚙️ Backend desarrollado con Node.js y Express.
+- 🚀 Proyecto orientado a simplificar el uso de IA local.
+
+---
+
+## 🔐 Privacidad
+
+Una de las principales ventajas de Local AI es que el modelo puede ejecutarse en el propio ordenador.
+
+Las consultas realizadas al modelo no necesitan enviarse a servicios de inteligencia artificial externos para generar una respuesta.
+
+Esto permite disponer de un entorno de IA local especialmente interesante para:
+
+- Desarrollo.
+- Laboratorios.
+- Formación.
+- Experimentación con LLM.
+- Entornos donde la privacidad de la información sea importante.
+
+> La privacidad final también dependerá de las configuraciones, modelos y servicios adicionales que el usuario decida utilizar.
+
+---
+
+## 🖥️ Requisitos
+
+Actualmente Local AI está diseñado para:
+
+- Windows 10/11 de 64 bits.
+- Ollama.
+- Hardware suficiente para ejecutar el modelo seleccionado.
+
+Los requisitos de RAM, almacenamiento, CPU y GPU dependerán principalmente del modelo que se quiera ejecutar.
+
+---
+
+## 📦 Instalador
+
+A partir de la versión **1.0.0**, Local AI puede distribuirse mediante un instalador para Windows:
+
+`Local-AI-Setup-1.0.0.exe`
+
+El instalador se encarga de desplegar los componentes de Local AI y crear los accesos directos correspondientes.
+
+Esto permite pasar de una instalación basada en archivos y scripts a una experiencia mucho más cercana a una aplicación convencional de Windows:
+
+```text
+Descargar
+    ↓
+Local-AI-Setup.exe
+    ↓
+Instalar
+    ↓
+Local AI
+    ↓
+IA ejecutándose localmente
+```
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+- Ollama
+- Node.js
+- Express
+- JavaScript
+- HTML5
+- CSS3
+- PowerShell
+- Inno Setup
+- Windows
+
+---
+
+## 📁 Código fuente
+
+El código fuente está disponible en este repositorio para poder estudiar, modificar y mejorar el proyecto.
+
+Los archivos principales incluyen el backend de Local AI, la interfaz web, los scripts de lanzamiento y la configuración necesaria para generar el instalador de Windows.
+
+---
+
+## 🗺️ Roadmap
+
+El proyecto continuará evolucionando con el objetivo de reducir todavía más la configuración necesaria para utilizar IA local.
+
+Entre las mejoras previstas:
+
+- Detección automática de Ollama.
+- Instalación asistida de dependencias.
+- Inicio automático del servicio necesario.
+- Detección de modelos instalados.
+- Instalación de modelos desde la interfaz.
+- Recomendación de modelos según el hardware.
+- Mejor gestión del estado de descarga de modelos.
+- Actualizaciones de Local AI.
+- Simplificación progresiva del proceso de instalación.
+
+El objetivo final es sencillo:
+
+> **Descargar → Instalar → Ejecutar → Utilizar IA local.**
+
+---
+
+## 👨‍💻 Proyecto
+
+**Local AI**
+
+Desarrollado por **SecTF Labs**
+
+GitHub:  
+https://github.com/GustavoUA/local-ia
+
+---
+
+## ⚠️ Estado del proyecto
+
+Local AI es un proyecto en desarrollo.
+
+La aplicación puede cambiar significativamente entre versiones y algunas funcionalidades pueden requerir configuración adicional dependiendo del sistema, la versión de Ollama y el modelo utilizado.
+
+Se recomienda consultar las notas de cada versión antes de actualizar.
+
+---
+
+## ⭐ Colaboración
+
+Si el proyecto te resulta útil, puedes apoyarlo dejando una ⭐ en GitHub.
+
+También son bienvenidos los reportes de errores, propuestas de mejora y contribuciones al proyecto.
+
+**SecTF Labs — Simplificando la tecnología sin renunciar al control local.**
 
 pasado unos 2 o 3 minutos "refresque" la ventana web, aparecerá la IA descargada
 
