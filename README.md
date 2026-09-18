@@ -1,4 +1,4 @@
-# tu_ia_local
+# TU IA LOCAL
 
 *Creado por **SecTF Lab***
 
